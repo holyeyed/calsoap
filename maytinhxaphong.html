@@ -1,0 +1,41 @@
+<meta charset="utf-8" />
+<title>MÁY TÍNH THÀNH PHẦN XÀ PHÒNG</title>
+<div style="margin: auto;width: 50%; background-color: #ffffaa; padding: 10;">
+<div style="font-size: 24pt; color: purple">MÁY TÍNH THÀNH PHẦN XÀ PHÒNG</div>
+Thể tích xà phòng:<br>
+<input id="vsoap" style="text-align:right; font-size:24pt;" value=1000 /> ml<BR>
+<div style="color: #006600">* Khối lượng dầu (1/2 palm + 1/2 coconut) (0.85 gram/ml):</div>
+<div style=""><div id="voil" style="display: inline-table;color: #ff0000;width: 100px;text-align: right">0</div>
+<div id="moil" style="display: inline-table; color: #000066;width: 100px;text-align: right">0</div></div>
+<div style="color: #006600">* Khối lượng nước ( ~2 lần NaOH) (1.0 gram/ml):</div>
+<div id="vh2o" style="display: inline-table; color: #ff0000;width: 100px;text-align: right">0</div>
+<div id="mh2o" style="display: inline-table;color: #000066;width: 100px;text-align: right">0</div>
+<div style="color: #006600">* Khối lượng xút(NaOH)  (2.1 gram/ml):</div>
+<div id="vnaoh" style="display: inline-table;color: #660000;width: 100px;text-align: right"></div>
+<div id="mnaoh" style="display: inline-table; color: #000066;width: 100px;text-align: right"></div>
+</div>
+<script>
+document.getElementById("vsoap").addEventListener("keyup",cal);
+function cal(){
+var vsoap=document.getElementById("vsoap").value;
+//alert(vsoap);
+var ow=0.85;
+var sr=0.16;
+var wpl=2;
+var o=sr/2.1+sr*wpl+1/ow;
+var voil=vsoap/o/ow;
+document.getElementById("voil").innerHTML=r(voil)+" ml";
+var moil=voil*ow;
+document.getElementById("moil").innerHTML=r(moil)+ " gram";
+var mh2o=vsoap/o*sr*wpl;
+document.getElementById("vh2o").innerHTML=r(mh2o)+" ml";
+document.getElementById("mh2o").innerHTML=r(mh2o)+ " gram";
+var mlye=mh2o/wpl;
+document.getElementById("mnaoh").innerHTML=r(mlye) +" gram";
+document.getElementById("vnaoh").innerHTML=r(mlye/2.1) +" ml";
+}
+
+function r(nb){
+return nb.toFixed(2);
+}
+</script>
