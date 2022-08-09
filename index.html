@@ -3,11 +3,11 @@
 <div style="margin: auto;width: 50%; background-color: #ffffaa; padding: 10;">
 <div style="font-size: 24pt; color: purple">MÁY TÍNH THÀNH PHẦN XÀ PHÒNG</div>
 Thể tích xà phòng:<br>
-<input id="vsoap" style="text-align:right; font-size:24pt;" value=1000 /> ml<BR>
+<input id="vsoap" style="text-align:right; font-size:24pt;" value=1700 /> ml<BR>
 <div style="color: #006600">* Khối lượng dầu (1/2 palm + 1/2 coconut) (0.85 gram/ml):</div>
 <div style=""><div id="voil" style="display: inline-table;color: #ff0000;width: 100px;text-align: right">0</div>
 <div id="moil" style="display: inline-table; color: #000066;width: 100px;text-align: right">0</div></div>
-<div style="color: #006600">* Khối lượng nước ( ~2 lần NaOH) (1.0 gram/ml):</div>
+<div style="color: #006600">* Khối lượng nước ( ~2.5 lần NaOH) (1.0 gram/ml):</div>
 <div id="vh2o" style="display: inline-table; color: #ff0000;width: 100px;text-align: right">0</div>
 <div id="mh2o" style="display: inline-table;color: #000066;width: 100px;text-align: right">0</div>
 <div style="color: #006600">* Khối lượng xút(NaOH)  (2.1 gram/ml):</div>
@@ -20,8 +20,8 @@ function cal(){
 var vsoap=document.getElementById("vsoap").value;
 //alert(vsoap);
 var ow=0.85;
-var sr=0.16;
-var wpl=2;
+var sr=0.14;
+var wpl=2.5;
 var o=sr/2.1+sr*wpl+1/ow;
 var voil=vsoap/o/ow;
 document.getElementById("voil").innerHTML=r(voil)+" ml";
